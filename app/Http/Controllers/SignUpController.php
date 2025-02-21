@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\SignUpRequest;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class SignUpController extends Controller
 {
@@ -14,6 +15,8 @@ class SignUpController extends Controller
 
     public function displayInfor(signUpRequest $Request)
     {
+        $users = session('userSession', []);
+
         $user = [
             'name' => $name = $Request->input('name'),
             'age' => $age = $Request->input('age'),
@@ -22,6 +25,10 @@ class SignUpController extends Controller
             'web' => $web = $Request->input('web'),
             'address' => $address = $Request->input('address')
         ];
-        return view('signUpForm')->with('user', $user);
+
+        $users[] = $user;
+        session(['userSession' => $users]);
+
+        return view('signUpForm')->with('users', $users);
     }
 }

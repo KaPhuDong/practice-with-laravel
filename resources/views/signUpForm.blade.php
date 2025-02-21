@@ -11,6 +11,7 @@
 <body>
 
     <div class="container">
+        <h1 class="heading">Information Form</h1>
         <form id="infoForm" method="post" action="signUpForm">
             @csrf
 
@@ -65,7 +66,8 @@
             <button type="submit">OK</button>
         </form>
 
-        @if (isset($user))
+        @if (isset($users))
+        @foreach ($users as $user)
         <div class="display-info" id="displayInfo">
             <p><strong>Name:</strong> {{ $user['name'] }}</p>
             <p><strong>Age:</strong> {{ $user['age'] }}</p>
@@ -74,6 +76,7 @@
             <p><strong>Website:</strong> {{ $user['web'] }}</p>
             <p><strong>Address:</strong> {{ $user['address'] }}</p>
         </div>
+        @endforeach
         @endif
     </div>
 

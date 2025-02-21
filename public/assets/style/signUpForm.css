@@ -14,6 +14,11 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
+.heading {
+    text-align: center;
+    color: #4CAF50;
+}
+
 .form-group {
     margin-bottom: 15px;
 }

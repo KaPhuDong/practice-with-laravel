@@ -25,7 +25,6 @@ class SignUpRequest extends FormRequest
             'name' => 'required|max:255|string',
             'age' => 'numeric',
             'date' => 'string',
-            'age' => 'string',
             'phone' => 'numeric',
             'web' => 'string',
             'address' => 'string'
@@ -36,7 +35,7 @@ class SignUpRequest extends FormRequest
     {
         return [
             'name.string' => 'Please, enter your name',
-            'age.string' => 'Please, enter your age',
+            'age.numeric' => 'Please, enter your age',
             'date.string' => 'Please, enter the date',
             'phone.numeric' => 'Please, check your phone number again',
             'web.string' => 'Please, check and enter characters again',

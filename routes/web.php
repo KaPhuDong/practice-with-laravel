@@ -4,6 +4,7 @@ use App\Http\Controllers\MyController;
 use App\Http\Controllers\SumController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\SignUpController;
+use App\Http\Controllers\CovidController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -45,3 +46,6 @@ Route::prefix('test')->group(function () {
 // singUp
 Route::get('signUpForm', [SignUpController::class, 'index']);
 Route::post('signUpForm', [SignUpController::class, 'displayInfor']);
+
+// Covid
+Route::get('/covid', [CovidController::class, 'getData']);

@@ -5,9 +5,11 @@ use App\Http\Controllers\SumController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\SignUpController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PageController;
+
 
 Route::get('/', function () {
-    return view('signUpForm');
+    return view('page.trangchu');
 });
 
 Route::get('onlyRoute', function () {
@@ -45,3 +47,16 @@ Route::prefix('test')->group(function () {
 // singUp
 Route::get('signUpForm', [SignUpController::class, 'index']);
 Route::post('signUpForm', [SignUpController::class, 'displayInfor']);
+
+//
+Route::get('signUpForm', [SignUpController::class, 'displayInfor']);
+
+//
+Route::get('index', [PageController::class, 'getIndex'])->name('trang-chu');
+Route::get('loai-san-pham', [PageController::class, 'getLoaiSp'])->name('loaisanpham');
+Route::get('chi-tiet-san-pham', [PageController::class, 'getChitiet'])->name('chitietsanpham');
+Route::get('lien-he', [PageController::class, 'getLienhe'])->name('lienhe');
+Route::get('gioi-thieu', [PageController::class, 'getAbout'])->name('about');
+
+
+

@@ -5,11 +5,10 @@ use App\Http\Controllers\SumController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\SignUpController;
 use App\Http\Controllers\CovidController;
+use App\Http\Controllers\CreateTableController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('signUpForm');
-});
+Route::get('/', [CreateTableController::class,'createTables']);
 
 Route::get('onlyRoute', function () {
     echo 'Hello PNV';
@@ -49,3 +48,6 @@ Route::post('signUpForm', [SignUpController::class, 'displayInfor']);
 
 // Covid
 Route::get('/covid', [CovidController::class, 'getData']);
+
+// Create table schema
+Route::get('create-table', [CreateTableController::class,'createTables']);

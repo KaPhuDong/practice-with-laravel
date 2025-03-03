@@ -5,10 +5,11 @@ use App\Http\Controllers\SumController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\SignUpController;
 use App\Http\Controllers\CovidController;
+use App\Http\Controllers\PageController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('signUpForm');
+    return view('page.home');
 });
 
 Route::get('onlyRoute', function () {
@@ -49,3 +50,15 @@ Route::post('signUpForm', [SignUpController::class, 'displayInfor']);
 
 // Covid
 Route::get('/covid', [CovidController::class, 'getData']);
+
+//shopper
+Route::get('home', [PageController::class, 'getIndex'])->name('home');
+Route::get('blog', [PageController::class, 'getBlog'])->name('blog');
+Route::get('blog-single', [PageController::class, 'getBlogSingle'])->name('blogSingle');
+Route::get('products-list', [PageController::class, 'getProducts'])->name('products');
+Route::get('product-detail', [PageController::class, 'getDetail'])->name('productDetail');
+Route::get('404', [PageController::class, 'get404'])->name('404');
+Route::get('cart', [PageController::class, 'getCart'])->name('cart');
+Route::get('checkout', [PageController::class, 'getCheckout'])->name('checkout');
+Route::get('login', [PageController::class, 'getLogin'])->name('login');
+Route::get('contact-us', [PageController::class, 'getContactUs'])->name('contact-us');

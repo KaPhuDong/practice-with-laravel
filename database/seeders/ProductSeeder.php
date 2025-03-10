@@ -1,0 +1,136 @@
+<?php
+
+namespace Database\Seeders;
+
+use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
+use Carbon\Carbon;
+
+class ProductSeeder extends Seeder
+{
+    public function run()
+    {
+        DB::table('products')->insert([
+            [
+                'name' => 'Bánh Kem',
+                'id_type' => 1,
+                'description' => 'Bánh kem tươi ngon, hấp dẫn.',
+                'unit_price' => 10000,
+                'promotion_price' => 8000,
+                'image' => 'banhkem.jpg',
+                'unit' => 'pcs',
+                'new' => 1,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+            [
+                'name' => 'Pizza',
+                'id_type' => 2,
+                'description' => 'Pizza với phô mai tan chảy và lớp topping đa dạng.',
+                'unit_price' => 15000,
+                'promotion_price' => 12000,
+                'image' => 'pizza.jpg',
+                'unit' => 'pcs',
+                'new' => 2,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+            [
+                'name' => 'Bánh Bông Lan',
+                'id_type' => 3,
+                'description' => 'Bánh Bông Lan Trứng thơm ngon.',
+                'unit_price' => 20000,
+                'promotion_price' => 18000,
+                'image' => 'banhbonglantrung.jpg',
+                'unit' => 'pcs',
+                'new' => 1,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+            [
+                'name' => 'Bánh Trái Cây',
+                'id_type' => 4,
+                'description' => 'Bánh Trái Cây tốt cho sức khỏe, ngon khỏe.',
+                'unit_price' => 12000,
+                'promotion_price' => 10000,
+                'image' => 'banhtraicay.jpg',
+                'unit' => 'pcs',
+                'new' => 3,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+            [
+                'name' => 'Bánh Crepe',
+                'id_type' => 4,
+                'description' => 'Bánh Crepe Pháp thơm ngon.',
+                'unit_price' => 25000,
+                'promotion_price' => 22000,
+                'image' => 'crepe-phap.jpg',
+                'unit' => 'pcs',
+                'new' => 1,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+            [
+                'name' => 'Bánh Mì Nhân Mận',
+                'id_type' => 5,
+                'description' => 'Bánh mì nhân mận, giòn rụm.',
+                'unit_price' => 15000,
+                'promotion_price' => 13000,
+                'image' => 'banh-mi-nhan-man.jpg',
+                'unit' => 'pcs',
+                'new' => 1,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+            [
+                'name' => 'Bánh Su Kem',
+                'id_type' => 6,
+                'description' => 'Bánh Su Kem thơm ngon, mời bạn ăn nha.',
+                'unit_price' => 35000,
+                'promotion_price' => 30000,
+                'image' => 'sukem.jpg',
+                'unit' => 'bowl',
+                'new' => 2,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+            [
+                'name' => 'Sầu Riêng Dừa',
+                'id_type' => 6,
+                'description' => 'Sầu Riêng Dừa thơm ngon.',
+                'unit_price' => 40000,
+                'promotion_price' => 37000,
+                'image' => 'saurieng-dua.jpg',
+                'unit' => 'bowl',
+                'new' => 1,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+            [
+                'name' => 'Peach Cake',
+                'id_type' => 7,
+                'description' => 'Peach Cake hấp dẫn.',
+                'unit_price' => 30000,
+                'promotion_price' => 28000,
+                'image' => 'Peach-Cake.jpg',
+                'unit' => 'pcs',
+                'new' => 1,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+            [
+                'name' => 'Sinh Tố Bơ Sầu Riêng',
+                'id_type' => 8,
+                'description' => 'Sinh tố bơ sầu riêng béo ngậy, mát lạnh.',
+                'unit_price' => 20000,
+                'promotion_price' => 18000,
+                'image' => 'saurieng-dua.jpg',
+                'unit' => 'cup',
+                'new' => 3,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+        ]);
+    }
+}

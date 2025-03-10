@@ -7,12 +7,13 @@ use App\Http\Controllers\SignUpController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PageController;
 use App\Models\Slide;
+use App\Models\Product;
 
 
 Route::get('/', function () {
     $slide = Slide::all();
-    // // dd($slide);
-    return view('page.trangchu', compact('slide'));
+    $products = Product::all();
+    return view('page.trangchu', compact('slide', 'products'));
 });
 
 Route::get('onlyRoute', function () {
@@ -60,6 +61,8 @@ Route::get('loai-san-pham', [PageController::class, 'getLoaiSp'])->name('loaisan
 Route::get('chi-tiet-san-pham', [PageController::class, 'getChitiet'])->name('chitietsanpham');
 Route::get('lien-he', [PageController::class, 'getLienhe'])->name('lienhe');
 Route::get('gioi-thieu', [PageController::class, 'getAbout'])->name('about');
+Route::get('/products', [PageController::class, 'getIndex'])->name('products.index');
+
 
 
 

@@ -6,10 +6,13 @@ use App\Http\Controllers\PostController;
 use App\Http\Controllers\SignUpController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PageController;
+use App\Models\Slide;
 
 
 Route::get('/', function () {
-    return view('page.trangchu');
+    $slide = Slide::all();
+    // // dd($slide);
+    return view('page.trangchu', compact('slide'));
 });
 
 Route::get('onlyRoute', function () {

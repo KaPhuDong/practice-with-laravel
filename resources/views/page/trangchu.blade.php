@@ -75,8 +75,6 @@
                                                         <span>${{ number_format($product->unit_price, 2) }}</span>
                                                     @endif
                                                 </p>
-                                                <p class="product-description">{{ Str::limit($product->description, 50) }}...</p>
-                                                <p><strong>Unit:</strong> {{ $product->unit }}</p>
                                             </div>
                                             <div class="single-item-caption">
                                                 <a class="add-to-cart pull-left" href="#"><i class="fa fa-shopping-cart"></i></a>
